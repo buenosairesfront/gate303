@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>303 Trainer · U-MA</title>
+<meta name="description" content="Escribí una línea de TB-303 paso a paso, escuchala y mirá cómo se carga en la máquina real.">
+<meta name="theme-color" content="#f7efd3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="303 Trainer · U-MA">
+<meta property="og:description" content="Escribí una línea de TB-303 paso a paso, escuchala con sonido de 303 y cargala en la máquina real botón a botón. ES · EN · DE · 日本 · 中文 · हिं">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Barlow+Condensed:wght@800&family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+JP:wght@900&text=%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=10">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<radialGradient id="kgrad" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#4a4d53"/><stop offset=".55" stop-color="#202226"/><stop offset="1" stop-color="#0d0e10"/></radialGradient>
+</defs></svg>
+<div class="wrap" id="main">
+  <header>
+    <svg class="logo" viewBox="0 0 330 212" role="img" aria-label="U-MA サウンド"><polygon points="36,6 14,28 14,206 36,184" fill="#a9aaa7" stroke="#161616" stroke-width="3" stroke-linejoin="round"/><polygon points="36,184 14,206 300,206 322,184" fill="#b4b5b2" stroke="#161616" stroke-width="3" stroke-linejoin="round"/><rect x="36" y="6" width="286" height="178" rx="3" fill="#161616"/><rect x="45" y="14" width="268" height="114" rx="2" fill="#EAEAE7"/><text x="179" y="113" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="800" font-size="116" textLength="248" lengthAdjust="spacingAndGlyphs" fill="#161616">U-MA</text><rect x="45" y="136" width="36" height="40" fill="#D12F7D" stroke="#161616" stroke-width="2"/><rect x="85" y="136" width="36" height="40" fill="#2A9EBF" stroke="#161616" stroke-width="2"/><rect x="125" y="136" width="36" height="40" fill="#E1C43B" stroke="#161616" stroke-width="2"/><rect x="166" y="136" width="147" height="40" fill="#EAEAE7"/><text x="239.5" y="165" text-anchor="middle" font-family="Noto Sans JP, Hiragino Sans, Yu Gothic, sans-serif" font-weight="900" font-size="27" letter-spacing="2" fill="#161616">サウンド</text></svg>
+    <div class="brand"><b>303 Trainer</b><span data-i18n="sub"></span></div>
+    <button class="iconbtn" id="saveQuick" aria-label="Guardar pattern" onclick="document.getElementById('ex').click();setTimeout(()=>document.getElementById('saveName').focus(),60)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></svg></button>
+    <select class="langs" data-langs aria-label="Idioma / Language"></select>
+    <button class="play" id="play"><span class="dot"></span><span id="playTxt">PLAY</span></button>
+  </header>
+
+  <div class="transport">
+    <div class="ctl"><span class="lbl" data-i18n="steps"></span>
+      <div class="stepper"><button id="lenDn" data-i18n-aria="lessSteps">−</button><output id="len">16</output><button id="lenUp" data-i18n-aria="moreSteps">+</button></div></div>
+    <div class="ctl"><span class="lbl" data-i18n="tempo"></span>
+      <div class="stepper"><button id="bpmDn" data-i18n-aria="slower">−</button><output id="bpm">124</output><button id="bpmUp" data-i18n-aria="faster">+</button></div></div>
+    <div class="ctl"><span class="lbl" data-i18n="wave"></span>
+      <div class="seg" id="wave"><button data-w="0" class="on">SAW</button><button data-w="1">SQR</button></div></div>
+    <div class="ctl"><span class="lbl">&nbsp;</span><button class="tbtn" id="ex" data-i18n="patterns"></button></div>
+    <div class="ctl"><span class="lbl">&nbsp;</span><button class="tbtn" id="clr" data-i18n="clear"></button></div>
+  </div>
+
+  <div class="roll"><span class="cmark" id="cmark">C</span><svg id="roll" preserveAspectRatio="none" role="img" aria-label="Piano roll"></svg></div>
+
+  <div class="grid" id="grid"></div>
+
+  <section class="panel editor">
+    <div class="ehead"><strong class="tag"><span data-i18n="step"></span> <em id="selN">1</em></strong><span class="info" id="selInfo"></span><button class="auto" id="auto" aria-pressed="true"><span class="ml"></span><span data-i18n="autoAdv"></span></button></div>
+    <div class="times">
+      <button class="tb" data-t="note"><span class="g g-n"></span><span><span data-i18n="note"></span><small>303 · DOWN</small></span></button>
+      <button class="tb" data-t="tie"><span class="g g-t"></span><span><span data-i18n="tie"></span><small>303 · UP</small></span></button>
+      <button class="tb" data-t="rest"><span class="g g-r"></span><span><span data-i18n="rest"></span><small>303 · ACCENT</small></span></button>
+    </div>
+    <div class="mods" id="mods">
+      <button class="mb" data-m="down"><span class="ml"></span>DOWN</button>
+      <button class="mb" data-m="up"><span class="ml"></span>UP</button>
+      <button class="mb" data-m="acc"><span class="ml"></span>ACC</button>
+      <button class="mb" data-m="slide"><span class="ml"></span>SLIDE</button>
+      <button class="mb tap" id="tap">TAP ▶</button>
+    </div>
+    <div class="kbd" id="kbd"></div>
+    <div class="scalebar">
+      <label class="sb"><span class="lbl" data-i18n="scale"></span><select id="scaleSel"></select></label>
+      <label class="sb root"><span class="lbl" data-i18n="root"></span><select id="rootSel"></select></label>
+      <button class="auto snap" id="snap" aria-pressed="false"><span class="ml"></span><span data-i18n="snap"></span></button>
+    </div>
+    <p class="hint keys" data-i18n="keysHint"></p>
+  </section>
+
+  <section class="panel sound">
+    <div class="sound-h"><span class="tag" data-i18n="sound"></span><canvas id="scope" aria-hidden="true"></canvas></div>
+    <div class="knobs" id="knobs"></div>
+  </section>
+
+  <section class="sheet" id="sheet">
+    <div class="sheet-h"><h2 class="tag" data-i18n="sheetTitle"></h2>
+      <div class="exp"><button class="mini dark" id="pngBtn">PNG</button><button class="mini dark" id="shareBtn" data-i18n="share"></button><button class="mini" id="midBtn">MIDI</button></div></div>
+    <div class="pass">
+      <h3><span data-i18n="stepsTimes"></span> <span class="count" id="tc"></span></h3>
+      <div class="steps16" id="timeList"></div>
+      <div class="legend">
+        <span><i class="g g-n"></i><span data-i18n="legNote"></span></span>
+        <span><i class="g g-t"></i><span data-i18n="legTie"></span></span>
+        <span><i class="g g-r"></i><span data-i18n="legRest"></span></span>
+      </div>
+    </div>
+    <div class="pass">
+      <h3><span data-i18n="seqTitle"></span> <span class="count" id="prog"></span><button class="mini" id="seqReset" data-i18n="seqReset"></button></h3>
+      <p data-i18n="seqIntro"></p>
+      <ol class="seq" id="seq"></ol>
+    </div>
+    <p class="fine" data-i18n="sheetNote"></p>
+  </section>
+  <footer data-i18n="footer"></footer>
+  <dialog id="lib">
+    <div class="lib-h"><h2 data-i18n="libTitle"></h2><button class="mini" id="libClose" data-i18n="close"></button></div>
+    <p class="lib-now" id="libNow"></p>
+    <h3 class="lib-sec" data-i18n="savedTitle"></h3>
+    <div class="saverow"><input id="saveName" maxlength="40" data-i18n-ph="namePh" autocomplete="off"><button class="mini dark" id="saveBtn" data-i18n="save"></button></div>
+    <ul class="saved" id="savedList"></ul>
+    <h3 class="lib-sec" data-i18n="examplesTitle"></h3>
+    <div id="libList"></div>
+    <p class="fine" data-i18n="libNote"></p>
+  </dialog>
+</div>
+<script src="js/i18n.js?v=10"></script>
+</body>
+</html>

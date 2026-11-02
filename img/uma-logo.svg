@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="105 72 1080 680" width="1080" height="680">
+<g id="uma" stroke-linejoin="miter">
+  <!-- caja: cara izquierda, base y frente -->
+  <polygon points="189,92 124,190 124,731 189,662" fill="#fff" stroke="#000" stroke-width="18"/>
+  <polygon points="189,647 1161,647 1084,731 124,731" fill="#fff" stroke="#000" stroke-width="18"/>
+  <rect x="189" y="92" width="972" height="555" fill="#fff" stroke="#000" stroke-width="18"/>
+  <rect x="189" y="497" width="972" height="20" fill="#000"/>
+  <rect x="601" y="507" width="20" height="140" fill="#000"/>
+  <!-- paleta -->
+  <rect x="197" y="517" width="128" height="121" fill="#ff0a8c"/>
+  <rect x="331" y="517" width="140" height="121" fill="#00d9f5"/>
+  <rect x="477" y="517" width="124" height="121" fill="#f6d800"/>
+  <!-- U-MA -->
+  <g fill="#000">
+    <polygon points="241,116 303,116 303,407 365,407 365,116 427,116 427,444 397,480 271,480 241,444"/>
+    <rect x="470" y="272" width="155" height="70"/>
+    <polygon points="662,116 724,116 754,190 787,116 849,116 849,480 787,480 787,262 754,334 724,262 724,480 662,480"/>
+    <path fill-rule="evenodd" d="M914,152 L944,116 L1069,116 L1100,152 L1100,480 L1038,480 L1038,334 L976,334 L976,480 L914,480 Z M976,189 L1038,189 L1038,262 L976,262 Z"/>
+  </g>
+  <text x="888" y="608" text-anchor="middle" font-family="'Noto Sans JP','Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic','Meiryo',sans-serif" font-weight="700" font-size="88" letter-spacing="4" fill="#000">サウンド</text>
+</g>
+</svg>
