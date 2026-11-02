@@ -1,6 +1,6 @@
 [English](README.md) · [Español](README.es.md) · [Français](README.fr.md) · **Deutsch** · [日本語](README.ja.md) · [中文](README.zh.md) · [हिन्दी](README.hi.md)
 
-# gate303 · 303 Trainer
+# Gate-03
 
 Schreib eine TB-303-Basslinie Schritt für Schritt, hör sie mit 303-Sound und hol dir die **Taste-für-Taste-Anleitung**, um sie in eine echte TB-303 (oder einen Klon) einzugeben. Eine 303 zu programmieren ist berüchtigt verwirrend; diese App übersetzt für dich.
 

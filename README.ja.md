@@ -1,6 +1,6 @@
 [English](README.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · **日本語** · [中文](README.zh.md) · [हिन्दी](README.hi.md)
 
-# gate303 · 303 Trainer
+# Gate-03
 
 TB-303 のベースラインをステップごとに書き、303 風の音で聴き、本物の TB-303（またはクローン）に打ち込むための **ボタンごとの手順書** を手に入れましょう。303 の打ち込みはわかりにくいことで有名ですが、このアプリが翻訳してくれます。
 

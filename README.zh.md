@@ -1,6 +1,6 @@
 [English](README.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [日本語](README.ja.md) · **中文** · [हिन्दी](README.hi.md)
 
-# gate303 · 303 Trainer
+# Gate-03
 
 一步一步写出 TB-303 贝斯线，用 303 风格的声音试听，并得到把它输入真正的 TB-303（或复刻机）的**逐键操作单**。303 的编程出了名地难懂；这个应用替你完成翻译。
 
