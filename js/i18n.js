@@ -1,7 +1,7 @@
 /* Idioma: ?lang=xx > última elección guardada > español. Carga lang/es.js (base) y el idioma elegido encima. */
 const LANGS=[['es','ES','Español'],['en','EN','English'],['de','DE','Deutsch'],['ja','日本','日本語'],['zh','中文','中文'],['hi','हिं','हिन्दी']];
 const ACID_I18N={};
-const VER=location.hostname==='localhost'?String(Date.now()):'10';
+const VER=location.hostname==='localhost'?String(Date.now()):'11';
 const LANG=(()=>{
   const ok=c=>LANGS.some(l=>l[0]===c);
   const u=new URLSearchParams(location.search).get('lang');

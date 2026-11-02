@@ -29,7 +29,7 @@ $('savedList').addEventListener('click',e=>{
 
 /* ---------- archivos ---------- */
 function download(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500);}
-const fileBase=()=>{const n=patternName().normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return '303-trainer'+(n?'-'+n:'');};
+const fileBase=()=>{const n=patternName().normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return 'gate-03'+(n?'-'+n:'');};
 
 /* MIDI tipo 0: semicorcheas de 24 ticks, gate 50%, ligados alargan, slide = notas superpuestas (legato), accent = velocity 127 */
 function midiBlob(){
@@ -43,7 +43,7 @@ function midiBlob(){
   ev.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
   const vlq=n=>{const b=[n&127];while(n>>=7)b.unshift((n&127)|128);return b;};
   const trk=[],push=(dt,arr)=>trk.push(...vlq(dt),...arr);
-  const us=Math.round(60e6/S.P.bpm),nm=[...new TextEncoder().encode(patternName()||'303 Trainer')];
+  const us=Math.round(60e6/S.P.bpm),nm=[...new TextEncoder().encode(patternName()||'Gate-03')];
   push(0,[0xFF,0x03,nm.length,...nm]);
   push(0,[0xFF,0x51,3,us>>16&255,us>>8&255,us&255]);
   push(0,[0xFF,0x58,4,4,2,24,8]);
@@ -85,7 +85,7 @@ async function sheetBlob(){
   const HB=124;g.fillStyle='#fbf6e4';g.fillRect(0,0,W,HB);
   drawUma(g,M,30,100);
   g.fillStyle='#d9cda6';g.fillRect(M+124,34,2,56);
-  sp(2);text('303 TRAINER',M+148,70,CF(700,40),INK);
+  sp(2);text('GATE-03',M+148,70,CF(700,40),INK);
   sp(5);text(u('sheetTitle').toUpperCase(),M+148,96,CF(600,17),MUT);sp(0);
   sp(1);text(new Date().toLocaleDateString(LANG,{year:'numeric',month:'short',day:'numeric'}).toUpperCase(),W-M,70,MF(500,15),MUT,'right');
   text(`${S.P.bpm} BPM`,W-M,96,MF(600,15),INK,'right');sp(0);
@@ -163,7 +163,7 @@ async function sheetBlob(){
   g.fillStyle='#d9cda6';g.fillRect(M,y,IW,1);y+=36;
   y=wrap(u('sheetNote'),M,y,IW,24,'500 16px system-ui,sans-serif',MUT);
   y+=14;drawUma(g,M,y-10,40);
-  sp(2);text('303 TRAINER',M+50,y+15,CF(700,18),INK);sp(0);text('buenosairesfront.github.io/acid303',W-M,y+15,MF(500,14),MUT,'right');
+  sp(2);text('GATE-03',M+50,y+15,CF(700,18),INK);sp(0);text('buenosairesfront.github.io/gate303',W-M,y+15,MF(500,14),MUT,'right');
   y+=52;
   const out=document.createElement('canvas');out.width=W;out.height=Math.ceil(y);out.getContext('2d').drawImage(cv,0,0);
   return new Promise(ok=>out.toBlob(ok,'image/png'));
@@ -172,7 +172,7 @@ async function busy(btn,fn){btn.disabled=true;try{await fn();}catch(e){console.e
 $('pngBtn').addEventListener('click',e=>busy(e.currentTarget,async()=>download(await sheetBlob(),fileBase()+'.png')));
 $('shareBtn').addEventListener('click',e=>busy(e.currentTarget,async()=>{
   const blob=await sheetBlob(),file=new File([blob],fileBase()+'.png',{type:'image/png'});
-  if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:'303 Trainer'});}catch(err){}}
+  if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:'Gate-03'});}catch(err){}}
   else download(blob,file.name);
 }));
 $('midBtn').addEventListener('click',()=>download(midiBlob(),fileBase()+'.mid'));

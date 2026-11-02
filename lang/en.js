@@ -1,7 +1,7 @@
 /* English */
 ACID_I18N.en={
 ui:{
- docTitle:"303 Trainer · U-MA",
+ docTitle:"Gate-03 · U-MA",
  metaDesc:"Write a TB-303 line step by step, hear it with a 303-style sound and see how to enter it on the real machine.",
  sub:"Pitch · Time · Practice",
  play:"PLAY",
@@ -69,7 +69,7 @@ ui:{
  delAsk:"Delete “{n}”?",
  share:"Share",
  audioErr:"Audio could not start in this browser.",
- footer:"303 Trainer · U-MA universe · inspired by the Roland TB-303, not affiliated"
+ footer:"Gate-03 · U-MA universe · inspired by the Roland TB-303, not affiliated"
 },
 scenes:["Hamamatsu 1981 · backing bass", "Chicago 1987 · acid house", "Chicago 1988 · jack track", "Manchester 1989 · acid rave", "Detroit 1990 · acid techno", "Frankfurt 1992 · acid trance", "Berlin 1993 · acid techno", "London 1995 · acid techno", "Goa 1996 · psytrance", "Rotterdam 1995 · hard acid"]
 };

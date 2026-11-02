@@ -1,7 +1,7 @@
 /* 中文 */
 ACID_I18N.zh={
 ui:{
- docTitle:"303 Trainer · U-MA",
+ docTitle:"Gate-03 · U-MA",
  metaDesc:"一步一步写出 TB-303 线条,用 303 风格的声音试听,并看看如何输入真正的机器。",
  sub:"Pitch · Time · 练习",
  play:"播放",
@@ -69,7 +69,7 @@ ui:{
  delAsk:"删除“{n}”?",
  share:"分享",
  audioErr:"无法在此浏览器中启动音频。",
- footer:"303 Trainer · U-MA 宇宙 · 灵感来自 Roland TB-303,无隶属关系"
+ footer:"Gate-03 · U-MA 宇宙 · 灵感来自 Roland TB-303,无隶属关系"
 },
 scenes:["滨松 1981 · 伴奏贝斯", "芝加哥 1987 · Acid House", "芝加哥 1988 · Jack Track", "曼彻斯特 1989 · Acid Rave", "底特律 1990 · Acid Techno", "法兰克福 1992 · Acid Trance", "柏林 1993 · Acid Techno", "伦敦 1995 · Acid Techno", "果阿 1996 · Psytrance", "鹿特丹 1995 · Hard Acid"]
 };
