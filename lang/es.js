@@ -52,7 +52,7 @@ ui:{
  howTitle:"Cómo se escribe",
  howPitch:"Primero cargás solo las notas, en orden: tecla, si hace falta UP/DOWN (octava), ACC o SLIDE, y TAP.",
  howTime:"Después decís qué hace cada paso:",
- howResult:"Cada DOWN toma la nota siguiente de la lista; UP estira la anterior y ACC calla.",
+ howResult:"Resultado: la máquina junta las dos listas. Cada DOWN toca la próxima nota cargada en el punto 1 (C, después E…); UP alarga la nota anterior un paso más; ACC, en Time mode, no es acento: deja ese paso en silencio. Con el ejemplo queda así:",
  seqPitch:"Apretá PITCH MODE y cargá las {k} notas, una por línea: tecla, modificadores y TAP.",
  seqTime:"Apretá TIME MODE y cargá los {L} pasos en orden: DOWN = nota, UP = ligado, ACCENT = silencio.",
  seqPlay:"Volvé el selector a PATTERN PLAY y apretá RUN/STOP para escucharla.",

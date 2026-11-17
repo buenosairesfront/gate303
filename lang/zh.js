@@ -52,7 +52,7 @@ ui:{
  howTitle:"怎么写",
  howPitch:"先按顺序只输入音:琴键,需要时加 UP/DOWN(八度)、ACC 或 SLIDE,再按 TAP。",
  howTime:"然后决定每一步做什么:",
- howResult:"每个 DOWN 取列表里的下一个音;UP 延长前一个音,ACC 不发声。",
+ howResult:"结果:机器把两张列表合在一起。每个 DOWN 演奏第 1 点里输入的下一个音(C,然后 E…);UP 把前一个音再延长一步;Time mode 里的 ACC 不是重音,而是让这一步变成休止。例子的结果如下:",
  seqPitch:"按 PITCH MODE,逐行输入 {k} 个音:琴键、修饰键和 TAP。",
  seqTime:"按 TIME MODE,按顺序输入 {L} 步:DOWN = 音符,UP = 连音,ACCENT = 休止。",
  seqPlay:"把选择器转回 PATTERN PLAY,按 RUN/STOP 试听。",

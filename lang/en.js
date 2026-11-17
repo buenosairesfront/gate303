@@ -52,7 +52,7 @@ ui:{
  howTitle:"How to write",
  howPitch:"First enter only the notes, in order: key, UP/DOWN (octave), ACC or SLIDE if needed, and TAP.",
  howTime:"Then tell each step what it does:",
- howResult:"Each DOWN takes the next note in the list; UP stretches the previous one and ACC is silent.",
+ howResult:"Result: the machine combines both lists. Each DOWN plays the next note entered in point 1 (C, then E…); UP holds the previous note one more step; ACC in Time mode is not accent: it makes that step a rest. With the example you get:",
  seqPitch:"Press PITCH MODE and enter the {k} notes, one per line: key, modifiers and TAP.",
  seqTime:"Press TIME MODE and enter the {L} steps in order: DOWN = note, UP = tie, ACCENT = rest.",
  seqPlay:"Turn the selector back to PATTERN PLAY and press RUN/STOP to hear it.",

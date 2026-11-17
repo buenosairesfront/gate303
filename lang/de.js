@@ -52,7 +52,7 @@ ui:{
  howTitle:"So wird geschrieben",
  howPitch:"Zuerst nur die Noten der Reihe nach eingeben: Taste, bei Bedarf UP/DOWN (Oktave), ACC oder SLIDE, und TAP.",
  howTime:"Dann sagst du jedem Schritt, was er tut:",
- howResult:"Jedes DOWN nimmt die nächste Note der Liste; UP verlängert die vorige, ACC ist still.",
+ howResult:"Ergebnis: Die Maschine kombiniert beide Listen. Jedes DOWN spielt die nächste in Punkt 1 eingegebene Note (C, dann E…); UP hält die vorige Note einen Schritt länger; ACC ist im Time Mode kein Akzent, sondern macht den Schritt zur Pause. Mit dem Beispiel ergibt sich:",
  seqPitch:"Drück PITCH MODE und gib die {k} Noten ein, eine pro Zeile: Taste, Modifikatoren und TAP.",
  seqTime:"Drück TIME MODE und gib die {L} Schritte der Reihe nach ein: DOWN = Note, UP = gebunden, ACCENT = Pause.",
  seqPlay:"Stell den Wähler zurück auf PATTERN PLAY und drück RUN/STOP zum Anhören.",

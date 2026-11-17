@@ -52,7 +52,7 @@ ui:{
  howTitle:"書き方",
  howPitch:"まず音だけを順番に入力:鍵盤、必要ならUP/DOWN(オクターブ)、ACC、SLIDE、そしてTAP。",
  howTime:"次に各ステップの動きを決めます:",
- howResult:"DOWNはリストの次の音を使い、UPは前の音を伸ばし、ACCは鳴りません。",
+ howResult:"結果:マシンが2つのリストを組み合わせます。DOWNは1で入力した次の音を鳴らし(C、次にE…)、UPは前の音を1ステップ伸ばします。Time modeのACCはアクセントではなく、そのステップを休符にします。例ではこうなります:",
  seqPitch:"PITCH MODEを押し、{k}個の音を1行ずつ入力:鍵盤、修飾ボタン、TAP。",
  seqTime:"TIME MODEを押し、{L}ステップを順番に入力:DOWN = 音符、UP = タイ、ACCENT = 休符。",
  seqPlay:"セレクターをPATTERN PLAYに戻し、RUN/STOPで再生します。",
