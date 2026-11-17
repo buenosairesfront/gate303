@@ -57,6 +57,7 @@ ui:{
  seqTime:"Press TIME MODE and enter the {L} steps in order: DOWN = note, UP = tie, ACCENT = rest.",
  seqPlay:"Turn the selector back to PATTERN PLAY and press RUN/STOP to hear it.",
  autoAdv:"Auto advance",
+ undo:"Undo",
  libTitle:"100 303 lines",
  libNote:"Original lines in the style of each scene, with its tempo, wave and knobs. They are not transcriptions of tracks. Tap a number to load and hear it.",
  close:"Close",

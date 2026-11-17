@@ -57,6 +57,7 @@ ui:{
  seqTime:"按 TIME MODE,按顺序输入 {L} 步:DOWN = 音符,UP = 连音,ACCENT = 休止。",
  seqPlay:"把选择器转回 PATTERN PLAY,按 RUN/STOP 试听。",
  autoAdv:"自动前进",
+ undo:"撤销",
  libTitle:"100 条 303 线条",
  libNote:"按各个场景风格创作的原创线条,附带速度、波形和旋钮设置。不是现有曲目的扒谱。点一个编号即可载入并试听。",
  close:"关闭",

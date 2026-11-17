@@ -57,6 +57,7 @@ ui:{
  seqTime:"TIME MODEを押し、{L}ステップを順番に入力:DOWN = 音符、UP = タイ、ACCENT = 休符。",
  seqPlay:"セレクターをPATTERN PLAYに戻し、RUN/STOPで再生します。",
  autoAdv:"自動送り",
+ undo:"元に戻す",
  libTitle:"303ライン100本",
  libNote:"各シーンのスタイルで作ったオリジナルのライン(テンポ、波形、ノブ付き)。既存曲の採譜ではありません。番号をタップすると読み込んで再生します。",
  close:"閉じる",

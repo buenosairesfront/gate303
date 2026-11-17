@@ -57,6 +57,7 @@ ui:{
  seqTime:"Drück TIME MODE und gib die {L} Schritte der Reihe nach ein: DOWN = Note, UP = gebunden, ACCENT = Pause.",
  seqPlay:"Stell den Wähler zurück auf PATTERN PLAY und drück RUN/STOP zum Anhören.",
  autoAdv:"Auto-Weiter",
+ undo:"Rückgängig",
  libTitle:"100 303-Linien",
  libNote:"Eigene Linien im Stil jeder Szene, mit Tempo, Welle und Reglern. Keine Transkriptionen von Tracks. Tippe auf eine Nummer, um sie zu laden und zu hören.",
  close:"Schließen",

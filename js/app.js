@@ -49,6 +49,18 @@ function sync(){
 }
 
 /* ---------- render ---------- */
+/* deshacer: cada vez que cambia el pattern (pasos o largo) se guarda el estado anterior; hasta 100 */
+let hist=[],histLast=null;
+function track(){
+  const now=JSON.stringify({len:S.len,steps:S.steps});
+  if(histLast!==null&&now!==histLast){hist.push(histLast);if(hist.length>100)hist.shift();}
+  histLast=now;$('undo').disabled=!hist.length;
+}
+function undo(){
+  if(!hist.length)return;
+  const d=JSON.parse(hist.pop());histLast=JSON.stringify(d);
+  S.steps=d.steps;S.len=d.len;if(S.sel>=S.len)S.sel=S.len-1;S.picked=false;render();
+}
 function render(){
   const owner=derive(),L=S.len,st=steps();
   $('len').textContent=L;$('bpm').textContent=S.P.bpm;
@@ -97,7 +109,7 @@ function render(){
   $('snap').classList.toggle('on',S.snap);$('snap').setAttribute('aria-pressed',S.snap);
   $('scaleSel').value=S.scale;$('rootSel').value=S.root;
   renderSheet();
-  sync();save();
+  sync();save();track();
   if(S.playing&&shown>=0)showStep(shown);
 }
 
@@ -235,6 +247,7 @@ $('grid').addEventListener('click',e=>{const c=e.target.closest('.cell');if(!c)r
 document.querySelectorAll('.tb').forEach(b=>b.addEventListener('click',()=>{S.mode=b.dataset.md;S.arm={down:false,up:false,acc:false,slide:false};render();}));
 document.querySelectorAll('.mb[data-m]').forEach(b=>b.addEventListener('click',()=>setMod(b.dataset.m)));
 $('tap').addEventListener('click',()=>{advance();render();});
+$('undo').addEventListener('click',undo);
 $('kbd').addEventListener('click',e=>{const k=e.target.closest('[data-p]');if(k)setPitch(+k.dataset.p);});
 $('play').addEventListener('click',toggle);
 $('lenDn').addEventListener('click',()=>{S.len=Math.max(1,S.len-1);if(S.sel>=S.len)S.sel=S.len-1;render();});

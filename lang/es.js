@@ -57,6 +57,7 @@ ui:{
  seqTime:"Apretá TIME MODE y cargá los {L} pasos en orden: DOWN = nota, UP = ligado, ACCENT = silencio.",
  seqPlay:"Volvé el selector a PATTERN PLAY y apretá RUN/STOP para escucharla.",
  autoAdv:"Avance auto",
+ undo:"Deshacer",
  libTitle:"100 líneas de 303",
  libNote:"Líneas originales al estilo de cada escena, con su tempo, onda y perillas. No son transcripciones de temas. Tocá un número para cargarla y escucharla.",
  close:"Cerrar",

@@ -133,6 +133,10 @@ header{display:flex;align-items:center;gap:8px}
 .auto .ml{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--navy)}
 .auto.on{background:var(--navy);color:var(--cream)}
 .auto.on .ml{background:var(--orange);border-color:var(--orange)}
+.undo{flex:none;width:26px;height:26px;border-radius:13px;border:var(--b);display:grid;place-items:center}
+.undo svg{width:14px;height:14px}
+.undo:active{background:var(--navy);color:var(--cream)}
+.undo:disabled{opacity:.3;cursor:default;background:none;color:inherit}
 .scalebar{display:flex;gap:5px;align-items:flex-end}
 .sb{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
 .sb.root{flex:0 0 58px}
