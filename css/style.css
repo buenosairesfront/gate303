@@ -227,4 +227,19 @@ header{display:flex;align-items:center;gap:8px}
 
 footer{font-size:10px;color:var(--muted);letter-spacing:.06em;text-align:center;font-weight:500}
 :lang(hi) .lbl,:lang(hi) .brand span,:lang(hi) .tb,:lang(hi) .pass h3,:lang(hi) .tag{letter-spacing:0}
+/* ---------- cómo se escribe ---------- */
+.howto{--sec:var(--orange)}
+.howto .tag{align-self:flex-start}
+.hw{display:flex;gap:9px;align-items:flex-start}
+.hn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--cream);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.hb{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}
+.hr{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+.ht{font-size:12px;line-height:1.45;color:var(--muted)}
+.ha{color:var(--muted);font-size:12px}
+.hk{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:.06em;margin-right:8px}
+.hgrid{display:grid;grid-template-columns:repeat(5,minmax(0,52px));gap:4px}
+.hgrid .cap{min-width:0;padding:0;font-size:9.5px}
+.hgrid b{text-align:center;font-family:var(--mono);font-size:12px;font-weight:600}
+.hgrid b.ti{color:#b0941c}
+.hgrid b.re{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}

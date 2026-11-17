@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Barlow+Condensed:wght@800&family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+JP:wght@900&text=%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/style.css?v=13">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -70,6 +70,25 @@
     <div class="knobs" id="knobs"></div>
   </section>
 
+  <section class="panel howto">
+    <span class="tag" data-i18n="howTitle"></span>
+    <div class="hw"><span class="hn">1</span><div class="hb">
+      <div class="hr"><span class="cap c-fn">PITCH MODE</span><span class="ht" data-i18n="howPitch"></span></div>
+      <div class="hr"><span class="cap c-key">C</span><span class="cap c-tap">TAP</span><span class="ha">→</span><span class="cap c-key">E</span><span class="cap c-tap">TAP</span><span class="ha">→</span><span class="cap c-key">G</span><span class="cap c-mod">UP</span><span class="cap c-acc">ACC</span><span class="cap c-tap">TAP</span></div>
+    </div></div>
+    <div class="hw"><span class="hn">2</span><div class="hb">
+      <div class="hr"><span class="cap c-fn">TIME MODE</span><span class="ht" data-i18n="howTime"></span></div>
+      <div class="hr"><span class="hk"><span class="cap c-t-note">DOWN</span><i class="g g-n"></i><span data-i18n="note"></span></span><span class="hk"><span class="cap c-t-tie">UP</span><i class="g g-t"></i><span data-i18n="tie"></span></span><span class="hk"><span class="cap c-t-rest">ACC</span><i class="g g-r"></i><span data-i18n="rest"></span></span></div>
+    </div></div>
+    <div class="hw"><span class="hn">3</span><div class="hb">
+      <div class="hr"><span class="ht" data-i18n="howResult"></span></div>
+      <div class="hgrid">
+        <span class="cap c-t-note">DOWN</span><span class="cap c-t-note">DOWN</span><span class="cap c-t-tie">UP</span><span class="cap c-t-rest">ACC</span><span class="cap c-t-note">DOWN</span>
+        <b>C</b><b>E</b><b class="ti">~</b><b class="re">·</b><b>G↑</b>
+      </div>
+    </div></div>
+  </section>
+
   <section class="sheet" id="sheet">
     <div class="sheet-h"><h2 class="tag" data-i18n="sheetTitle"></h2>
       <div class="exp"><button class="mini dark" id="pngBtn">PNG</button><button class="mini dark" id="shareBtn" data-i18n="share"></button><button class="mini" id="midBtn">MIDI</button></div></div>
@@ -101,6 +120,6 @@
     <p class="fine" data-i18n="libNote"></p>
   </dialog>
 </div>
-<script src="js/i18n.js?v=12"></script>
+<script src="js/i18n.js?v=13"></script>
 </body>
 </html>
