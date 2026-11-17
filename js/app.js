@@ -13,7 +13,7 @@ function example(){
   return [n(0,0,true),n(0,1,false,true),n(3),t(),n(0),r(),n(7,-1,true),n(10,-1,false,true),
           n(0),t(),r(),n(3,1,true),n(5,0,false,true),n(7),r(),n(12)];
 }
-let S={len:16,sel:0,steps:example(),P:{...DEF},playing:false,auto:true,scale:11,root:0,snap:false,arm:{down:false,up:false,acc:false,slide:false}};
+let S={len:16,sel:0,mode:'pitch',steps:example(),P:{...DEF},playing:false,auto:true,scale:11,root:0,snap:false,arm:{down:false,up:false,acc:false,slide:false}};
 try{const d=JSON.parse(localStorage.getItem(STORE));if(d&&d.steps&&d.steps.length===16){S.len=d.len;S.steps=d.steps;S.P={...DEF,...d.P};if(d.auto===false)S.auto=false;if(d.scale>=0&&d.scale<SCALES.length)S.scale=d.scale;if(d.root>=0&&d.root<12)S.root=d.root;S.snap=!!d.snap;}}catch(e){}
 function save(){try{localStorage.setItem(STORE,JSON.stringify({len:S.len,steps:S.steps,P:S.P,auto:S.auto,scale:S.scale,root:S.root,snap:S.snap}));}catch(e){}}
 
@@ -87,9 +87,9 @@ function render(){
   const cur=st[S.sel],isN=cur.type==='note';
   $('selN').textContent=S.sel+1;
   $('selInfo').textContent=isN?fmtS(u('infoNote'),{n:nm(cur)})+(cur.acc?u('infoAcc'):'')+(cur.slide?u('infoSlide'):''):cur.type==='tie'?(owner[S.sel]<0?u('infoTieDead'):u('infoTie')):u('infoRest');
-  document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.t===cur.type));
-  $('mods').classList.toggle('dis',!isN&&!S.auto);
-  const on=!editing()?S.arm:{down:isN&&cur.oct<0,up:isN&&cur.oct>0,acc:isN&&cur.acc,slide:isN&&cur.slide};
+  document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.md===S.mode));
+  $('mods').classList.toggle('dis',S.mode!=='time'&&!isN&&!S.auto);
+  const on=S.mode==='time'?{down:isN,up:cur.type==='tie',acc:cur.type==='rest',slide:false}:!editing()?S.arm:{down:isN&&cur.oct<0,up:isN&&cur.oct>0,acc:isN&&cur.acc,slide:isN&&cur.slide};
   $('auto').classList.toggle('on',S.auto);$('auto').setAttribute('aria-pressed',S.auto);
   document.querySelectorAll('.mb[data-m]').forEach(b=>b.classList.toggle('on',on[b.dataset.m]));
   document.querySelectorAll('#kbd [data-p]').forEach(k=>{const p=+k.dataset.p,ins=inScale(p);
@@ -122,9 +122,10 @@ function renderSheet(){
   $('tc').textContent=fmtS(u('tcCount'),{L,k});
   $('seq').innerHTML=`
     <li><span class="nb">1</span><span class="txt">${u('seqSetup')}</span></li>
-    <li><span class="nb">2</span><div class="seqbody"><div class="caps">${pm}<span class="txt">${fmtS(u('seqPitch'),{k})}</span></div><div class="caps">${body||`<span class="txt">${u('noNotes')}</span>`}</div></div></li>
-    <li><span class="nb">3</span><div class="seqbody"><div class="caps">${tm}<span class="txt">${fmtS(u('seqTime'),{L})}</span></div><div class="timecaps">${caps}</div></div></li>
-    <li><span class="nb">4</span><span class="txt">${u('seqPlay')}</span></li>`;
+    <li><span class="nb">2</span><span class="txt">${fmtS(u('seqSteps'),{L})}</span></li>
+    <li><span class="nb">3</span><div class="seqbody"><div class="caps">${pm}<span class="txt">${fmtS(u('seqPitch'),{k})}</span></div><div class="caps">${body||`<span class="txt">${u('noNotes')}</span>`}</div></div></li>
+    <li><span class="nb">4</span><div class="seqbody"><div class="caps">${tm}<span class="txt">${fmtS(u('seqTime'),{L})}</span></div><div class="timecaps">${caps}</div></div></li>
+    <li><span class="nb">5</span><span class="txt">${u('seqPlay')}</span></li>`;
   $('prog').textContent=`${done.size}/${id}`;
 }
 
@@ -217,6 +218,8 @@ const setType=t=>{const s=S.steps[S.sel];s.type=t;if(t==='note'&&!S.auto){render
 const editing=()=>!S.auto||(S.picked&&S.steps[S.sel].type==='note');
 const pick=i=>{S.sel=i;S.picked=true;};
 const setMod=m=>{
+  /* TIME MODE, como en la 303: DOWN = nota, UP = ligado, ACCENT = silencio; cada uno escribe el paso y avanza, sin sonar */
+  if(S.mode==='time'){const t={down:'note',up:'tie',acc:'rest'}[m];if(t){S.steps[S.sel].type=t;advance();render();}return;}
   if(!editing()){const a=S.arm;a[m]=!a[m];if(m==='up'&&a.up)a.down=false;if(m==='down'&&a.down)a.up=false;render();return;}
   const s=S.steps[S.sel];if(s.type!=='note')return;
   if(m==='up')s.oct=s.oct>0?0:1;else if(m==='down')s.oct=s.oct<0?0:-1;else s[m]=!s[m];render();preview();};
@@ -229,7 +232,7 @@ const setPitch=p=>{
   S.arm={down:false,up:false,acc:false,slide:false};preview();advance();render();
 };
 $('grid').addEventListener('click',e=>{const c=e.target.closest('.cell');if(!c)return;pick(+c.dataset.i);render();preview();});
-document.querySelectorAll('.tb').forEach(b=>b.addEventListener('click',()=>setType(b.dataset.t)));
+document.querySelectorAll('.tb').forEach(b=>b.addEventListener('click',()=>{S.mode=b.dataset.md;S.arm={down:false,up:false,acc:false,slide:false};render();}));
 document.querySelectorAll('.mb[data-m]').forEach(b=>b.addEventListener('click',()=>setMod(b.dataset.m)));
 $('tap').addEventListener('click',()=>{advance();render();});
 $('kbd').addEventListener('click',e=>{const k=e.target.closest('[data-p]');if(k)setPitch(+k.dataset.p);});

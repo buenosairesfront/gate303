@@ -94,6 +94,7 @@ header{display:flex;align-items:center;gap:8px}
 .ehead strong em{font-style:normal;background:var(--cream-2);color:var(--acc);border-radius:8px;padding:0 6px;margin-left:2px;font-weight:700;line-height:18px}
 .ehead .info{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .times{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.times.modes{grid-template-columns:repeat(2,1fr)}
 .tb{height:42px;border-radius:10px;border:var(--b);display:flex;align-items:center;justify-content:center;gap:7px;font-weight:700;letter-spacing:.06em;font-size:12.5px;line-height:1;text-transform:uppercase}
 .tb.on{background:var(--navy);color:var(--cream)}
 .tb small{display:block;font-size:8.5px;letter-spacing:.06em;color:var(--muted);font-weight:600;margin-top:3px}

@@ -140,7 +140,8 @@ async function sheetBlob(){
   const head=(n,t,y0)=>{text(String(n).padStart(2,'0'),M,y0,MF(600,16),COL.acc);sp(3);text(t,M+48,y0,CF(700,26),INK);g.font=CF(700,26);const tw=g.measureText(t).width;sp(0);g.fillStyle='#d9cda6';g.fillRect(M+48+tw+18,y0-9,W-M-(M+48+tw+18),1);return y0+10;};
   g.fillStyle=INK;g.fillRect(M,y-30,IW,2);sp(4);text(u('seqTitle').toUpperCase(),M,y+6,CF(700,22),INK);sp(0);y+=44;
   y=head(1,'PATTERN WRITE',y+20);y=wrap(u('seqSetup'),M+48,y+14,IW-48,30,'500 22px system-ui,sans-serif',MUT)+14;
-  y=head(2,'PITCH MODE',y+20);y=wrap(fmtS(u('seqPitch'),{k:EV.filter(Boolean).length}),M+48,y+14,IW-48,30,'500 22px system-ui,sans-serif',MUT)+4;
+  y=head(2,'STEP',y+20);y=wrap(fmtS(u('seqSteps'),{L}),M+48,y+14,IW-48,30,'500 22px system-ui,sans-serif',MUT)+14;
+  y=head(3,'PITCH MODE',y+20);y=wrap(fmtS(u('seqPitch'),{k:EV.filter(Boolean).length}),M+48,y+14,IW-48,30,'500 22px system-ui,sans-serif',MUT)+4;
   x=M+48;let k=0;
   for(let i=0;i<L;i++){const s=st[i];if(s.type!=='note')continue;k++;
     const parts=[[NAMES[s.pitch],'key']];if(s.oct<0)parts.push(['DOWN','mod']);if(s.oct>0)parts.push(['UP','mod']);if(s.acc)parts.push(['ACCENT','acc']);if(s.slide)parts.push(['SLIDE','sl']);parts.push(['TAP','tap']);
@@ -150,14 +151,14 @@ async function sheetBlob(){
     let cx=x+32;for(const [l,kd] of parts)cx+=cap(cx,y+4,l,kd)+6;x+=lw+4;
   }
   y+=100;
-  y=head(3,'TIME MODE',y);y=wrap(fmtS(u('seqTime'),{L}),M+48,y+14,IW-48,30,'500 22px system-ui,sans-serif',MUT)+4;
+  y=head(4,'TIME MODE',y);y=wrap(fmtS(u('seqTime'),{L}),M+48,y+14,IW-48,30,'500 22px system-ui,sans-serif',MUT)+4;
   const per=8,tw=(IW-48-(per-1)*8)/per;
   for(let i=0;i<L;i++){const s=st[i],cx=M+48+(i%per)*(tw+8),cy=y+Math.floor(i/per)*72,kd={note:'n',tie:'t',rest:'r'}[s.type];
     const c={n:[WELL,'#fff'],t:[COL.tie,INK],r:['#fff',INK]}[kd];
     rr(cx,cy,tw,62,8,c[0],kd==='n'?WELL:kd==='t'?COL.tie:LO,kd==='r'?[5,4]:null);
     text(String(i+1),cx+tw/2,cy+22,MF(600,14),kd==='n'?'#a9b8cc':MUT,'center');text(TT[s.type],cx+tw/2,cy+48,MF(700,17),c[1],'center');}
   y+=Math.ceil(L/per)*72+30;
-  y=head(4,'PATTERN PLAY',y+10);y=wrap(u('seqPlay'),M+48,y+14,IW-48,30,'500 22px system-ui,sans-serif',MUT)+20;
+  y=head(5,'PATTERN PLAY',y+10);y=wrap(u('seqPlay'),M+48,y+14,IW-48,30,'500 22px system-ui,sans-serif',MUT)+20;
 
   // pie
   g.fillStyle='#d9cda6';g.fillRect(M,y,IW,1);y+=36;

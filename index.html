@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Barlow+Condensed:wght@800&family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+JP:wght@900&text=%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -45,10 +45,9 @@
 
   <section class="panel editor">
     <div class="ehead"><strong class="tag"><span data-i18n="step"></span> <em id="selN">1</em></strong><span class="info" id="selInfo"></span><button class="auto" id="auto" aria-pressed="true"><span class="ml"></span><span data-i18n="autoAdv"></span></button></div>
-    <div class="times">
-      <button class="tb" data-t="note"><span class="g g-n"></span><span><span data-i18n="note"></span><small>303 · DOWN</small></span></button>
-      <button class="tb" data-t="tie"><span class="g g-t"></span><span><span data-i18n="tie"></span><small>303 · UP</small></span></button>
-      <button class="tb" data-t="rest"><span class="g g-r"></span><span><span data-i18n="rest"></span><small>303 · ACCENT</small></span></button>
+    <div class="times modes">
+      <button class="tb" data-md="pitch">PITCH MODE</button>
+      <button class="tb" data-md="time">TIME MODE</button>
     </div>
     <div class="mods" id="mods">
       <button class="mb" data-m="down"><span class="ml"></span>DOWN</button>
@@ -102,6 +101,6 @@
     <p class="fine" data-i18n="libNote"></p>
   </dialog>
 </div>
-<script src="js/i18n.js?v=11"></script>
+<script src="js/i18n.js?v=12"></script>
 </body>
 </html>

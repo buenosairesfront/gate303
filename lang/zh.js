@@ -48,6 +48,7 @@ ui:{
  seqReset:"重置",
  seqIntro:"在机器上按顺序按下每个按钮。每按一个,就在这里点一下把它划掉。",
  seqSetup:"把模式选择器转到 PATTERN WRITE,选一个空模式。",
+ seqSteps:"步数:按住 FUNCTION,再按标有 STEP 的键 {L} 次(每步一次)。如果是 16 步就不用设:清除模式后已经是 16 步。",
  seqPitch:"按 PITCH MODE,逐行输入 {k} 个音:琴键、修饰键和 TAP。",
  seqTime:"按 TIME MODE,按顺序输入 {L} 步:DOWN = 音符,UP = 连音,ACCENT = 休止。",
  seqPlay:"把选择器转回 PATTERN PLAY,按 RUN/STOP 试听。",

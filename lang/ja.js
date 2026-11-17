@@ -48,6 +48,7 @@ ui:{
  seqReset:"リセット",
  seqIntro:"実機でこの順番どおりにボタンを押していきます。押したボタンをここでタップすると消し込めます。",
  seqSetup:"モードセレクターをPATTERN WRITEにして、空のパターンを選びます。",
+ seqSteps:"ステップ数:FUNCTIONを押したまま、STEPと書かれたキーを{L}回押します(1ステップにつき1回)。16ステップの場合は不要です。パターンを消去すると16になります。",
  seqPitch:"PITCH MODEを押し、{k}個の音を1行ずつ入力:鍵盤、修飾ボタン、TAP。",
  seqTime:"TIME MODEを押し、{L}ステップを順番に入力:DOWN = 音符、UP = タイ、ACCENT = 休符。",
  seqPlay:"セレクターをPATTERN PLAYに戻し、RUN/STOPで再生します。",

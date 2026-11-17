@@ -48,6 +48,7 @@ ui:{
  seqReset:"Reiniciar",
  seqIntro:"Seguí la secuencia en la máquina apretando cada botón en orden. Tocá cada botón acá a medida que lo apretás para ir tachándolo.",
  seqSetup:"Poné el selector de modo en PATTERN WRITE y elegí un patrón vacío.",
+ seqSteps:"Cantidad de pasos: manteniendo apretado FUNCTION, apretá {L} veces la tecla marcada STEP (una vez por paso). Si el patrón tiene 16 pasos no hace falta: al borrarlo ya queda en 16.",
  seqPitch:"Apretá PITCH MODE y cargá las {k} notas, una por línea: tecla, modificadores y TAP.",
  seqTime:"Apretá TIME MODE y cargá los {L} pasos en orden: DOWN = nota, UP = ligado, ACCENT = silencio.",
  seqPlay:"Volvé el selector a PATTERN PLAY y apretá RUN/STOP para escucharla.",

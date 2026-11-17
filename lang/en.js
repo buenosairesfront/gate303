@@ -48,6 +48,7 @@ ui:{
  seqReset:"Reset",
  seqIntro:"Follow the sequence on the machine, pressing each button in order. Tap each button here as you press it to cross it off.",
  seqSetup:"Turn the mode selector to PATTERN WRITE and pick an empty pattern.",
+ seqSteps:"Number of steps: while holding FUNCTION, press the key marked STEP {L} times (once per step). If the pattern has 16 steps you can skip this: clearing it already sets 16.",
  seqPitch:"Press PITCH MODE and enter the {k} notes, one per line: key, modifiers and TAP.",
  seqTime:"Press TIME MODE and enter the {L} steps in order: DOWN = note, UP = tie, ACCENT = rest.",
  seqPlay:"Turn the selector back to PATTERN PLAY and press RUN/STOP to hear it.",

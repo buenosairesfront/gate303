@@ -48,6 +48,7 @@ ui:{
  seqReset:"Zurücksetzen",
  seqIntro:"Folge der Sequenz an der Maschine und drück jede Taste der Reihe nach. Tippe hier jede Taste an, sobald du sie gedrückt hast, um sie abzuhaken.",
  seqSetup:"Stell den Moduswähler auf PATTERN WRITE und wähle ein leeres Pattern.",
+ seqSteps:"Anzahl der Schritte: Halte FUNCTION gedrückt und drück die mit STEP markierte Taste {L}-mal (einmal pro Schritt). Bei 16 Schritten ist das nicht nötig: Nach dem Löschen sind es schon 16.",
  seqPitch:"Drück PITCH MODE und gib die {k} Noten ein, eine pro Zeile: Taste, Modifikatoren und TAP.",
  seqTime:"Drück TIME MODE und gib die {L} Schritte der Reihe nach ein: DOWN = Note, UP = gebunden, ACCENT = Pause.",
  seqPlay:"Stell den Wähler zurück auf PATTERN PLAY und drück RUN/STOP zum Anhören.",
